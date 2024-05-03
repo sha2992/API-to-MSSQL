@@ -23,6 +23,7 @@ df = pandas.json_normalize(responseData,'data')
 
 #print(df.head())
 
+# Connecting SQL to Python
 server = 'DESKTOP-73ELNP5'
 driver = 'SQL Server Native Client 11.0'
 database = 'DataEngineering'
@@ -32,5 +33,5 @@ engine = sqlalchemy.create_engine(conn_str)
 
 #connec = engine.connect()
 
+# Load Data into SQL Server
 df.to_sql(name='FactCrypto',con=engine,index=False,if_exists='replace')
-
